@@ -4,43 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hanzku Studio</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-            overflow: hidden;
-        }
-        
-        iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-            display: block;
-        }
-    </style>
-</head>
-<body>
-    <iframe id="dashboardFrame" src="about:blank" allowfullscreen></iframe>
-
     <script>
         const params = new URLSearchParams(window.location.search);
         const idAkses = params.get('id');
-
         const targetBase = "http://ai.hanzku.my.id:19207/dashboard/";
 
-        const frame = document.getElementById('dashboardFrame');
-
         if (idAkses) {
-            frame.src = targetBase + idAkses;
-            document.title = "Dashboard - " + idAkses;
+            window.location.replace(targetBase + idAkses);
         } else {
-            document.body.innerHTML = '<h3 style="padding:20px; font-family:sans-serif;">Not Found</h3>';
+            document.body.innerHTML = "Error: ID Not Found.";
         }
     </script>
+</head>
+<body>
+    <p></p>
 </body>
 </html>
