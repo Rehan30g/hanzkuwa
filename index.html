@@ -1,1 +1,29 @@
-hello world!
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        // 1. Ambil parameter '?id=' dari URL saat ini
+        const params = new URLSearchParams(window.location.search);
+        const idAkses = params.get('id');
+
+        // 2. URL Dasar tujuan
+        const targetBase = "http://ai.hanzku.my.id:19207/dashboard/";
+
+        // 3. Logika Pengalihan
+        if (idAkses) {
+            // window.location.replace menggantikan history saat ini
+            // agar user tidak terjebak loop jika menekan tombol Back
+            window.location.replace(targetBase + idAkses);
+        } else {
+            // Opsi jika user membuka web tanpa ?id=
+            document.body.innerHTML = "Error: ID Akses tidak ditemukan di URL.";
+        }
+    </script>
+</head>
+<body>
+    <p></p>
+</body>
+</html>
