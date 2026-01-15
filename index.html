@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hanzku Studio</title>
+    <title>Hanzku Dashboard</title>
     <script>
         const params = new URLSearchParams(window.location.search);
         const idAkses = params.get('id');
-        const targetBase = "http://ai.hanzku.my.id:19207/dashboard/";
+        const targetBase = "http://ap1.nzl.zelpstore.id:25593/dashboard/";
 
         if (idAkses) {
             window.location.replace(targetBase + idAkses);
